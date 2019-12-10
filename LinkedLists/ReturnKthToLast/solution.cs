@@ -1,20 +1,15 @@
-//find Kth to last element in a singly linked list
+// Cracking the coding interview - interview questions 2.2
+//find Kth TO last element in a singly linked list
+
+using System;
 
 namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 {
 	public class Solution
 	{
-		public static Node<int> KToLast(int k, Node<int> linkedList)
+		public static int KToLast(int k, Node<int> linkedList)
 		{
-			var node = linkedList;
-			var index = 1;
-			while (node != null)
-			{
-				if (k == index++)
-					return node;
-				node = node.Next;
-			}
-			return null;
+			throw new NotImplementedException();
 		}
 	}
 }
