@@ -1,46 +1,10 @@
 // Cracking the coding interview - interview questions 2.1
 // remove duplicates from unsorted linked list
 using Xunit;
+using System.Collections.Generic;
 
 namespace org.pv.AlgoPlayground.LinkedLists.RemoveDuplicatesFromUnsortedLinkedList
 {
-	public class Test
-	{
-
-		[Fact]
-		public void TestRemoveDuplicatesFromUnsortedLinkedListBruteForce()
-		
-		{
-			//Given 
-			int[] testLinkedListValues = new int[11] { 4, 4, 6, 4, 1, 9, 1, 10, 5, 11, 1 };
-			var testLinkedList = Node<int>.CreateLinkedList(testLinkedListValues);
-
-			//When 
-			var removedDuplicates = Solution.RemoveDuplicatesBruteForce(testLinkedList);
-
-			//Then - there should be 7 unique elements in removedDuplicates = {4, 6, 1, 9, 10, 5, 11}
-			var isUniqueElements = true;
-			var root = removedDuplicates;
-			while (root != null)
-			{	
-				var current = root.Next;
-				while (current != null)	
-				{
-					if(root.Value == current.Value)
-					{
-						isUniqueElements = false;			
-						break;
-					}
-					current = current.Next;
-				}
-				if(!isUniqueElements)
-					break;
-				root = root.Next;
-			}
-			Assert.True(isUniqueElements);
-		}
-	}
-    
     public class Solution
     {
 		// O(n^2), 
@@ -70,6 +34,45 @@ namespace org.pv.AlgoPlayground.LinkedLists.RemoveDuplicatesFromUnsortedLinkedLi
             }
 
             return linkedList;
+		}
+
+		// O(n),
+		public static Node<int> RemoveDuplicatesTemporaryBuffer(Node<int> linkedList)
+		{
+			var mapCount = new Dictionary<int, int>();
+			var node = linkedList;
+
+			// create map of element count 
+			while (node != null)
+			{
+				if (mapCount.ContainsKey(node.Value))
+					mapCount[node.Value] += 1;
+				else
+					mapCount[node.Value] = 1;
+				node = node.Next;
+			}
+
+			node = linkedList;
+			Node<int> previous = null;
+			while (node != null)
+			{
+				if (mapCount[node.Value] > 1)
+				{
+					if (previous != null)
+					{
+						previous.Next = node.Next;
+						mapCount[node.Value] -= 1;
+					}
+					else
+						previous = node;
+				}
+				else
+					previous = node;
+
+				node = node.Next;
+			}
+
+			return linkedList;
 		}
 	}
 }

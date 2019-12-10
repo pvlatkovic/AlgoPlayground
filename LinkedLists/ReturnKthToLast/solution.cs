@@ -2,5 +2,8 @@
 
 namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 {
-
+	public class Solution
+	{
+		
+	}
 }
