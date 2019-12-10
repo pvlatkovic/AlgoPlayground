@@ -13,7 +13,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 			var testLinkedList = Node<int>.CreateLinkedList(testLinkedListValues);
 
 			//When 
-			var KthToLast = Solution.KToLast(6, testLinkedList);
+			var KthToLast = Solution.KToLast(5, testLinkedList);
 
 			//Then - 9 should be returned
 			Assert.Equal(KthToLast, 9);
