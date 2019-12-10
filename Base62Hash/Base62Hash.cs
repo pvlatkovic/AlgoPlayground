@@ -10,6 +10,7 @@ public class Program
 	
 	private static string base62Chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; 
 	private static int numberOf62Characters = 62;
+	// converts integer to bas62 hash string
 	public static string GetBase62(int i)
 	{
 		var hash = "";
