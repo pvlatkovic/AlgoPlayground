@@ -51,25 +51,26 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 				throw new ArgumentException("Linked list cannot be null.");
 				
 			var ret = CheckNull(linkedList, k, 0);
-			if (ret != null)
-				return ret.Value;
+			if (ret.Item1 != null)
+				return ret.Item1.Value;
 
 			throw new IndexOutOfRangeException("K is larger then number of elements in linked list");
 		}
 
-		private static Node<int> CheckNull(Node<int> linkedList, int k, int currentPosition)
+		private static (Node<int>, int) CheckNull(Node<int> linkedList, int k, int currentPosition) // tuple fun :)
 		{
-			Node<int> ret = null;
+			(Node<int>, int) ret = (null, 0);
 			if(linkedList.Next != null)
 				ret = CheckNull(linkedList.Next, k, currentPosition+1);
 
-			if(ret != null)
-				return ret;
+			var countBack = ret.Item2;
+			if(ret.Item1 != null)
+				return (ret.Item1, k);
 
-			if(k == currentPosition)
-				return linkedList;
+			if(k == countBack)
+				return (linkedList, k);
 			else 
-				return null;
+				return (null, countBack+1);
 		}
 	}
 }
