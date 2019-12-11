@@ -7,7 +7,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 {
 	public class Solution
 	{
-		// O(n) solution, reverse list and read first k elements
+		// O(n) time solution, reverse list and read first k elements
 		// space is duplicated for value types
 		// new linked list hold references therefor space is added for reference types
 		public static int KToLast(int k, Node<int> linkedList)
@@ -41,7 +41,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 			return reversedLinkedList.Value;
 		}
 
-		// O(n) again,done just for fun :) O(n) space added due to recursive call stacks 
+		// O(n) time again,done just for fun :) space increases too due to recursive call stack
 		public static int KToLastRecursive(int k, Node<int> linkedList)
 		{
 			if (k < 0)
