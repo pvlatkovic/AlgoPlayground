@@ -7,16 +7,11 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 {
 	public class Solution
 	{
-		public static void Main()
-		{
-			int[] testLinkedListValues = new int[11] { 4, 4, 6, 4, 1, 9, 1, 10, 5, 11, 1 };
-			var testLinkedList = Node<int>.CreateLinkedList(testLinkedListValues);
-
-			KToLast(5, testLinkedList);
-		}
-
 		public static int KToLast(int k, Node<int> linkedList)
 		{
+			if(k < 0)
+				throw new ArgumentException("element index K cannot be less than 0");
+
 			var currentNode = linkedList;
 			var reversedLinkedList = new Node<int>(currentNode.Value);
 						
@@ -29,10 +24,16 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReturnKthToLast
 				reversedLinkedList = tempNode;
 				currentNode = currentNode.Next;
 			}
-			
-			Console.WriteLine(reversedLinkedList);
 
-			return -1;
+			for(int i = 0; i < k; i++)
+			{
+				if(reversedLinkedList == null)
+					throw new IndexOutOfRangeException("K is larger then number of elements in linked list");
+				reversedLinkedList = reversedLinkedList.Next;
+
+			}
+
+			return reversedLinkedList.Value;
 		}
 	}
 }
