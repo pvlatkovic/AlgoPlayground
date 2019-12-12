@@ -1,10 +1,12 @@
+// before implementing DeleteMiddleNode problem I tried this :)
+
 using System;
 
-namespace org.pv.AlgoPlayground.LinkedLists.DeleteMiddleNode
+namespace org.pv.AlgoPlayground.LinkedLists.DeleteNodeInTheMiddle
 {
 	public class Solution
 	{
-		public static Node<int> DeleteMiddleNode(Node<int> linkedList)
+		public static Node<int> DeleteNodeInTheMiddle(Node<int> linkedList)
 		{
 			if (linkedList == null)
 				throw new ArgumentException("Linked list cannot be null.");
