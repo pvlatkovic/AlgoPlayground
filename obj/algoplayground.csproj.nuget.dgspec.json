@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {}
+    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {
+    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
+        "projectUniqueName": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
         "projectName": "algoplayground",
-        "projectPath": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
-        "packagesPath": "C:\\Users\\peca\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\edu\\AlgoPlayground\\obj\\",
+        "projectPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
+        "packagesPath": "C:\\Users\\prvl1605\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\peca\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\prvl1605\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +25,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tfs-extensions.swiss.com/NuGet_Repository/nuget": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
