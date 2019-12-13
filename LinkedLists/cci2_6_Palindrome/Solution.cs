@@ -5,7 +5,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.Palindrome
 {
 	public class Solution
 	{
-		// initial solution
+		// initial solution (O(n) but double space complexity for value types. Space is also added for reference types, nodes and references are doubled
 		public static bool IsPalindrom(Node<char> linkedList)
 		{
 			// reverse list into new list
@@ -34,9 +34,9 @@ namespace org.pv.AlgoPlayground.LinkedLists.Palindrome
 				node = node.Next;
 				termNode = termNode.Next;
 			}
-
-
 			return isPalindrome;
 		}
 	}
+
+
 }
