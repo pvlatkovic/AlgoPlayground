@@ -1,3 +1,7 @@
+// Cracking codig interview 2.5
+// SumLists, List1(7 -> 1 -> 6) + List2(5 -> 9 -> 2) = 617 + 295 = 912
+
+
 namespace org.pv.AlgoPlayground.LinkedLists.SumLists
 {
 	public class Solution
