@@ -31,6 +31,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.Revert
 				}
 
 				node = node.Next;
+				nodeR = nodeR.Next;
 			}
 
 			Assert.True(isRevertedProperly);

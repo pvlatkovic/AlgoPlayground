@@ -4,23 +4,15 @@ namespace org.pv.AlgoPlayground.LinkedLists.Revert
 	{
 		public static Node<int> Revert(Node<int> linkedList)
 		{
-			/*
-				take first element, node
-				get its next node
-				set root points to next node
-				set node.Next to point node.Next.Next
-				1, 2, 3, 4 ->
-					root = 2
-					next = 
-
-			*/
 			var root = linkedList;
 			var node = linkedList;
+			Node<int> first;
 			while(node.Next != null)
 			{
-				root = node.Next;
+				first = node.Next;
 				node.Next = node.Next.Next;
-				root.Next = node;
+				first.Next = root;
+				root = first;
 			}
 
 			return root;

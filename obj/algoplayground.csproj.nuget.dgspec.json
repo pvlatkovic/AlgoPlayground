@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {}
+    "C:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {
+    "C:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
+        "projectUniqueName": "C:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
         "projectName": "algoplayground",
-        "projectPath": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
+        "projectPath": "C:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
         "packagesPath": "C:\\Users\\peca\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\edu\\AlgoPlayground\\obj\\",
+        "outputPath": "C:\\Projects\\edu\\AlgoPlayground\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
