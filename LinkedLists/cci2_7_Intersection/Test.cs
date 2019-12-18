@@ -11,10 +11,10 @@ namespace org.pv.AlgoPlayground.LinkedLists.Intersection
 			// a: 1->2->3->4->5->6->null
 			// b: 7->8->^
 			var testList = new int[6] { 1, 2, 3, 4, 5, 6};
-			var testLinkedList = Node<int>.CreateLinkedList(testList);
+			var testLinkedList1 = Node<int>.CreateLinkedList(testList);
 
 			// get 3rd node
-			Node<int> thirdNode = testLinkedList; 
+			Node<int> thirdNode = testLinkedList1; 
 			for(int i = 1; i < 3; i++)
 			{
 				thirdNode = thirdNode.Next;
@@ -31,7 +31,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.Intersection
 			previous.Next = thirdNode;
 
 			//When 
-			var interrsectionNode = Solution.GetIntersectionNode(testLinkedList, testLinkedList2);
+			var interrsectionNode = Solution.GetIntersectionNodeBrute(testLinkedList1, testLinkedList2);
 
 			//Then
 			Assert.True(interrsectionNode != null);

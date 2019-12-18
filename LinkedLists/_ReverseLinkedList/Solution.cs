@@ -3,24 +3,20 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReverseLinkedList
 	public class Solution
 	{
 		// O(n) time/space solution
-		public static Node<int> ReverseLinkedList(Node<int> testLinkedList)
+		public static Node<int> ReverseLinkedList(Node<int> linkedList)
 		{
-			var currentNode = testLinkedList;
-			var root  = testLinkedList;
-
-			while (currentNode != null)
+			var root = linkedList;
+			var node = linkedList;
+			Node<int> first;
+			while (node.Next != null)
 			{
-				var nextNode = currentNode.Next;
-				if (nextNode != null)
-				{
-					currentNode.Next = nextNode.Next;
-					nextNode.Next = root; 
-					root = nextNode;
-				}
-				else break;
+				first = node.Next;
+				node.Next = node.Next.Next;
+				first.Next = root;
+				root = first;
 			}
-			
-			return root; 
+
+			return root;
 		}
 	}
 

@@ -5,28 +5,24 @@ namespace org.pv.AlgoPlayground.LinkedLists.Intersection
 {
 	public class Solution
 	{
-		public static Node<int> GetIntersectionNode(Node<int> linkedList1, Node<int> linkedList2)
+		public static Node<int> GetIntersectionNodeBrute(Node<int> firstList, Node<int> secondList)
 		{
-			var linkedList1Revert = ReverseLinkedList.Solution.ReverseLinkedList(linkedList1);
-			var linkedList2Revert = ReverseLinkedList.Solution.ReverseLinkedList(linkedList2);
+			// brute force solution O(NxM), if n~m => O(N^2)
+			 var rootSecondList = secondList;
+			 var a = firstList;
+			 while (a != null)
+			 {
+				 var b = rootSecondList;
+				 while(b != null)
+				 {
+					if(a == b)
+						return a;
 
-			var node1 = linkedList1Revert;
-			var node2 = linkedList2Revert;
-			Node<int> previous = null;
-
-			while(node1 !=null)
-			{
-				if (node1 != node2)
-					break;
-				else
-				{
-					previous = node1;
-					node1 = node1.Next;
-					node2 = node2.Next;
-				}
-			}
-
-			return previous;
+					b = b.Next;
+				 }
+				 a = a.Next;
+			 }
+			 return null;
 		}
 	}
 }
