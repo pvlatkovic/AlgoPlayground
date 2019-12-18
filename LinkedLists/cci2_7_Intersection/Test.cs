@@ -42,8 +42,8 @@ namespace org.pv.AlgoPlayground.LinkedLists.Intersection
 		public void TestIntersection()
 		{
 			//Given two lists which intersect (share one node)
-			// a: 1->2->3->4->5->6->null
-			// b: 7->8->^
+			// a:    1->2->3->4->5->6->null
+			// b: 7->8->9->^
 			var testList = new int[6] { 1, 2, 3, 4, 5, 6 };
 			var testLinkedList1 = Node<int>.CreateLinkedList(testList);
 
