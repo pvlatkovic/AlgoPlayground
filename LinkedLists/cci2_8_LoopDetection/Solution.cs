@@ -6,6 +6,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 {
 	public class Solution
 	{
+		// O(N) complexity, double space complexity in terms of references or newly created value types
 		 public static Node<int> DetectLoopBrute(Node<int> linkedList)
 		 {
 			var node = linkedList;
@@ -28,5 +29,31 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 
 			return null;
 		 }
+
+		public static Node<int> DetectLoopRacingPointers(Node<int> linkedList)
+		{
+			//TODO: add implementation
+			// having two pointers moving simultaniously at different speeds. Faster will outrun slower eventualy...
+			var nodeSlow = linkedList;
+			var nodeFast = linkedList;
+			while (nodeSlow != null)
+			{
+				for(int i=0; i < 2; i++)
+				{
+					var prev = nodeFast;
+					nodeFast = nodeFast.Next;
+					if(nodeFast == null)
+						return null;
+					if(nodeSlow == nodeFast)
+					{
+						return prev;
+					}
+				}
+				
+				nodeSlow = nodeSlow.Next;				
+			}
+			
+			return null;
+		}
 	}
 }

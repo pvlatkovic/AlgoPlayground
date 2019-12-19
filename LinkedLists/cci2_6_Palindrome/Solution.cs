@@ -5,7 +5,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.Palindrome
 {
 	public class Solution
 	{
-		// initial solution (O(n) but double space complexity for value types. Space is also added for reference types, nodes and references are doubled
+		// initial solution (O(n) but double space complexity for value types. Space is also added for reference types (nodes and references are doubled)
 		public static bool IsPalindrom(Node<char> linkedList)
 		{
 			// reverse list into new list
@@ -36,7 +36,13 @@ namespace org.pv.AlgoPlayground.LinkedLists.Palindrome
 			}
 			return isPalindrome;
 		}
+
+		public static bool IsPalindromIterative(Node<char> linkedList)
+		{
+			//TODO: add implementation
+			return false;
+		}
+
+		// could add recursive but space and time complexity would not change anyway
 	}
-
-
 }
