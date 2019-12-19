@@ -30,7 +30,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 			}
 
 			//When
-			var ret = Solution.DetectLoop(testLinkedList);
+			var ret = Solution.DetectLoopBrute(testLinkedList);
 
 			//Then
 			Assert.True(thirdNode == ret);
