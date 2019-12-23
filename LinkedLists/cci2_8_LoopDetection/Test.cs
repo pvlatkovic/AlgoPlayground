@@ -34,6 +34,12 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 
 			//Then
 			Assert.True(thirdNode == ret);
+
+			//When
+			var ret2 = Solution.DetectLoopRacingPointers(testLinkedList);
+
+			//Then
+			Assert.True(thirdNode == ret2);
 		}
 	}
 }
