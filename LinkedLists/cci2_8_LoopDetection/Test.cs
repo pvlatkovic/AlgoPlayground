@@ -8,13 +8,13 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 		public void TestLoopDetection()
 		{
 			//Given
-			var testList = new int[6] { 1, 2, 3, 4, 5, 6 };
+			var testList = new int[11] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
 			var testLinkedList = Node<int>.CreateLinkedList(testList);
 			
-			Node<int> thirdNode = testLinkedList;
-			for (int i = 1; i < 3; i++)
+			Node<int> collisionNode = testLinkedList;
+			for (int i = 1; i < 4; i++)
 			{
-				thirdNode = thirdNode.Next;
+				collisionNode = collisionNode.Next;
 			}
 
 			// create circular reference
@@ -23,23 +23,23 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 			{
 				if(node.Next == null)
 				{
-					node.Next = thirdNode;
+					node.Next = collisionNode;
 					break;
 				}
 				node = node.Next;
 			}
 
+			// //When
+			// var ret = Solution.DetectLoopBrute(testLinkedList);
+
+			// //Then
+			// Assert.True(collisionNode == ret);
+
 			//When
-			var ret = Solution.DetectLoopBrute(testLinkedList);
+			var retcollisionNode = Solution.DetectLoopRacingPointers(testLinkedList);
 
 			//Then
-			Assert.True(thirdNode == ret);
-
-			//When
-			var ret2 = Solution.DetectLoopRacingPointers(testLinkedList);
-
-			//Then
-			Assert.True(thirdNode == ret2);
+			Assert.True(collisionNode == retcollisionNode);
 		}
 	}
 }

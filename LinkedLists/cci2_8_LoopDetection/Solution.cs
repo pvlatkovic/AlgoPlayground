@@ -30,46 +30,58 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 			return null;
 		 }
 
-		public static Node<int> DetectLoopRacingPointers(Node<int> linkedList)
+		// O(N) time and space
+		public static Node<int> DetectLoopRacingPointers(Node<int> linkedList) 
 		{
-			// having two pointers moving simultaniously at different speeds. Faster will outrun slower eventualy...
-			var nodeSlow = linkedList;
+			// having two pointers moving simultaniously at different speeds (x2). Faster will outrun slower eventualy...
+			var nodeSlow = linkedList; 
 			var nodeFast = linkedList;
 
-			int nodeSlowCount = 0, nodeFastCount = 0;
+			while (nodeFast != null && nodeFast.Next != null)
+			{
+				nodeSlow = nodeSlow.Next; // move one possition
+				nodeFast = nodeFast.Next.Next; // move two possitions
 
+				if (nodeSlow == nodeFast)
+				{
+					// Now lets find the start of the loop.
+					// Move slow pointer to the beginning of the list, 
+					nodeSlow = linkedList;
+
+					// start moving fast and slow at same speed until collide
+					while(nodeSlow != nodeFast)
+					{
+						nodeSlow = nodeSlow.Next;
+						nodeFast = nodeFast.Next;
+					}
+					return nodeSlow;
+				}
+			}
+
+			// will try to optimize, maybe count nodes and calculate collide possition... 
+			/*
 			while (nodeSlow != null)
 			{
-				nodeSlowCount++;
-				for(int i=0; i < 2; i++)
+				for (int i = 0; i < 2; i++)
 				{
-					nodeFastCount++;
 					nodeFast = nodeFast.Next;
-					if(nodeFast == null)
+					if (nodeFast == null)
 						return null;
-					if(nodeSlow == nodeFast)
+
+					if (nodeSlow == nodeFast)
 					{
-						// now count number of elements in the circle (e.g. 1-2-3-4-1 is a circle)
-						var startCircleNode = nodeSlow; 
-						var node = nodeSlow.Next;
-
-						var circleCount = 1;
-
-						while(node != startCircleNode)
+						while (nodeSlow != nodeFast)
 						{
-							circleCount++;
-							node = node.Next;
+							nodeSlow = nodeSlow.Next;
+							nodeFast = nodeFast.Next;
 						}
-						//now what? :)
-						// we have number of "slow" nodes until collision 
-						// as well as number of "fast" nodes and size of "circle"
-
-
+						return nodeSlow;
 					}
 				}
 
-				nodeSlow = nodeSlow.Next;				
+				nodeSlow = nodeSlow.Next;
 			}
+			*/
 			
 			return null;
 		}
