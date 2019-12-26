@@ -34,6 +34,8 @@ namespace org.pv.AlgoPlayground.LinkedLists.LoopDetection
 					node = node.Next;
 				}
 			}
+
+			// Bad brute force, messes original linked list, "Dark side is easy"
 			// //When
 			// var ret = Solution.DetectLoopBrute(testLinkedList);
 
