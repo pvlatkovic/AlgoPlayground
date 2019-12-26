@@ -47,3 +47,4 @@ public class Node<T>
 		return stringBuilder.ToString();
 	}
 }
+
