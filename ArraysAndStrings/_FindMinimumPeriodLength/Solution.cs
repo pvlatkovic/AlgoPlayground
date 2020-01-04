@@ -14,3 +14,38 @@ n = 8		8
 a = {2, 5, 3, 2, 5, 3, 2, 5}
 
 */
+
+namespace org.pv.AlgoPlayground.ArraysAndStrings.FindMinimumPeriodLength
+{
+	public class Solution
+	{
+		public static int MinPeriod(int[] A, int n)
+		{
+			var m = n/2;
+			bool isPeriodBreak;
+			var t = 1;
+			for(t = 1; t <= m; t++)
+			{
+				isPeriodBreak = false;
+				for(int k = 0; k < m; k = k+t) // period block
+				{
+					for (int i=0; i<t; i++)
+					{
+						if(A[i] != A[i+k+t])
+						{
+							isPeriodBreak = true;
+							break;
+						}
+					}
+					if(isPeriodBreak)
+						break;
+					else
+						return t;
+				}
+			}
+
+			return n;
+		}
+	}
+}
+
