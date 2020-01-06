@@ -21,25 +21,28 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.FindMinimumPeriodLength
 	{
 		public static int MinPeriod(int[] A, int n)
 		{
-			var m = n/2;
+			var m = n / 2;
 			bool isPeriodBreak;
-			var t = 1;
-			for(t = 1; t <= m; t++)
+
+			for (var t = 1; t <= m; t++)
 			{
-				isPeriodBreak = false;
-				for(int k = 0; k < m; k = k+t) // period block
+				if (A[0] == A[t] && n % t == 0) // check if t can be full period and if t-th element is equal to first one
 				{
-					for (int i=0; i<t; i++)
+					isPeriodBreak = false;
+					for (int k = 0; k < m; k = k + t) // start checking period t
 					{
-						if(A[i] != A[i+k+t])
+						for (int i = 0; i < t; i++)
 						{
-							isPeriodBreak = true;
-							break;
+							if (A[i] != A[i + k + t])
+							{
+								isPeriodBreak = true;
+								break;
+							}
 						}
+						if (isPeriodBreak)
+							break;
 					}
-					if(isPeriodBreak)
-						break;
-					else
+					if (!isPeriodBreak)
 						return t;
 				}
 			}
