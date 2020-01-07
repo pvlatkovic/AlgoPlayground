@@ -48,7 +48,7 @@ namespace org.pv.AlgoPlayground.LinkedLists.ReverseLinkedListFromAToBIndex
 							next.Next = linkedList;
 							linkedList = next;
 						}
-						else
+						else // standard case, reverse happens in the middle of the list
 						{
 							next.Next = root.Next;
 							root.Next = next;
