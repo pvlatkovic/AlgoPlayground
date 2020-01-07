@@ -8,7 +8,7 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.TwoStringsArePermutations
 			if (s1.Length != s2.Length)
 				return false;
 
-			var charCountS1 = new int[128];
+			var charCountS1 = new int[128]; // used 128 size array, since I assume ascii chars will be used
 			var charCountS2 = new int[128];
 
 			for(int i = 0; i < s1.Length; i++)
