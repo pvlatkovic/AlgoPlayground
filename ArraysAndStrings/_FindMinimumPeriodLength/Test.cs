@@ -28,7 +28,7 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.FindMinimumPeriodLength
 			
 			//When
 			var result = Solution.MinPeriod(A, A.Length);
-
+																			
 			//Then
 			Assert.Equal(resultExpected, result);
 		}
