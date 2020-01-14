@@ -29,7 +29,7 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.EditsAway
 				x += System.Math.Abs(cs[i]);
 			}
 
-			if(x > 1)
+			if(x/2 > 1) // two differences, one change :)
 				return false;
 
 			return true;
