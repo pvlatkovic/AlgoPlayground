@@ -5,7 +5,7 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.RotateMatrix90
 {
 	public class Solution
 	{
-		//O(N^2) if we consider NxN is M number of elements then we could say this is O(M) complexity
+		//if we consider NxN is M number of elements then we could say this is O(M) complexity
 		public static int[,] RotateBrute(int[,] X)
 		{
 			// first idea, do matrix transpose then invert each row
@@ -43,6 +43,7 @@ namespace org.pv.AlgoPlayground.ArraysAndStrings.RotateMatrix90
 			return X;
 		}
 
+		//O(M), M = NxN, one pass
 		public static int[,] Rotate(int[,] X)
 		{
 			// move N-1 elements per ring (pealing matrix :)
