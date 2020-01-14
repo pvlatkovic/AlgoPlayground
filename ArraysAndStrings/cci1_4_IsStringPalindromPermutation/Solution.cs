@@ -1,3 +1,7 @@
+// Cracking the coding interview - interview questions 1.4
+// Check if string is a perumutation of a palindrome (input "tact coa", true)
+// character case not ignored e.g. 'c' != 'C'
+
 namespace org.pv.AlgoPlayground.ArraysAndStrings.IsPalindromPermutation
 {
 	public class Solution
