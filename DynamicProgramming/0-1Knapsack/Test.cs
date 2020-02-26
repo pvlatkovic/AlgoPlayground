@@ -14,13 +14,13 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 			// 9147
 			var capacity = 995; // knapsack capacity 995 -> max value 9147 
 
-			//When
-			var result = Solution.NaiveRecursion01Knapsack(w, v, capacity);
-			//Then
-			Assert.Equal(9147, result);
+			// //When
+			// var result = Solution.NaiveRecursion01Knapsack(w, v, capacity);
+			// //Then
+			// Assert.Equal(9147, result);
 
 			//When
-			result = Solution.MomoizeRecursion01Knapsack(w, v, capacity);
+			var result = Solution.MomoizeRecursion01Knapsack(w, v, capacity);
 			//Then
 			Assert.Equal(9147, result);
 		}
