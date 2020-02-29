@@ -28,8 +28,6 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 
 		private static int rec(int[] w, int[] v, int index, int capacity)
 		{
-			var key = index.ToString() + "_" + capacity.ToString();
-
 			if(capacity == 0 || index < 0)
 			 	return 0;
 
@@ -41,12 +39,12 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 			}
 			else
 			{
-				//calculate without the item 
-				var m1 = rec(w, v, index-1, capacity);
-				//calculate with the item 
-				var m2 = v[index] + rec(w, v, index-1, capacity-w[index]);
+				//calculate without the next item in the array
+				var max1 = rec(w, v, index-1, capacity);
+				//calculate with the next item in the array
+				var max2 = v[index] + rec(w, v, index-1, capacity-w[index]);
 				// check which is bigger
-				max = m1 > m2 ? m1 : m2;
+				max = max1 > max2 ? max1 : max2;
 			}
 
 			return max;
@@ -61,7 +59,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 			var index = w.Length - 1;
 			return recMemo(w, v, index, capacity);
 		}
-		
+
 		private static Dictionary<string, int> cache = new Dictionary<string, int>();
 
 		private static int recMemo(int[] w, int[] v, int index, int capacity)
@@ -81,12 +79,12 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 			}
 			else
 			{
-				//calculate without the item 
-				var m1 = recMemo(w, v, index-1, capacity);
-				//calculate with the item 
-				var m2 = v[index] + recMemo(w, v, index-1, capacity-w[index]);
+				//calculate without the next item in the array
+				var max1 = recMemo(w, v, index-1, capacity);
+				//calculate with the next item in the array
+				var max2 = v[index] + recMemo(w, v, index-1, capacity-w[index]);
 				// check which is bigger
-				max = m1 > m2 ? m1 : m2;
+				max = max1 > max2 ? max1 : max2;
 			}
 
 			// insert to cache and runaway :)

@@ -14,6 +14,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming._01Knapsack
 			// 9147
 			var capacity = 995; // knapsack capacity 995 -> max value 9147 
 
+			// WARNING: NaiveRecursion01Knapsack cannot process large input, reduce number of items in w and v arrays
 			// //When
 			// var result = Solution.NaiveRecursion01Knapsack(w, v, capacity);
 			// //Then
