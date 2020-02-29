@@ -1,6 +1,4 @@
 // Find Sets Of Numbers That Add Up To N (target)
-// do we use negative numbers? - no
-// do we have duplicates? - no
 // FindSetsOfNumbersThatAddUpToN(int[] array, int N), returns number of sets that can add up to N
 
 using System;
@@ -32,6 +30,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming.FindSetsOfNumbersThatAddUpToN
 
 			int res;
 
+	// if commented we assume non positive numbers could be used in the input array
 			// if(target < v[index])
 			// 	res = rec(v, index-1, target); // skip
 			// else
