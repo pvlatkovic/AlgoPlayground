@@ -26,17 +26,24 @@ namespace org.pv.AlgoPlayground.DynamicProgramming.NQueens
 {
 	public class Test
 	{
-		[Fact]
-		public void TestNQueens()
+		[Theory]
+		[InlineData(5, 10)]
+		[InlineData(6, 4)]
+		[InlineData(7, 40)]
+		[InlineData(8, 92)]
+		[InlineData(9, 352)]
+		[InlineData(10, 724)]
+		[InlineData(11, 2680)]
+		[InlineData(12, 14200)]
+		public void TestNQueens(int N, int resultExprected)
 		{
 			//Given N
-			var N = 8;
 
 			//When
 			var result = Solution.SolveNQuens(N);
 
 			//Then
-			Assert.True(result.Count > 0);
+			Assert.True(resultExprected == result.Count);
 		}
 	}
 }
