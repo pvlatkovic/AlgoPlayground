@@ -30,6 +30,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming.NQueens
 				queenPosPerRow[i] = -1;
 		}
 
+		//Main method
 		private static void SolveNthRow(List<int[]> solutions, int N, int rowIndex, int[] queenPosPerRow)
 		{
 			if(rowIndex == N)
@@ -61,6 +62,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming.NQueens
 					return false;
 			}
 
+			//check diagonal up right
 			var i = columnIndex+1; var j = rowIndex-1;
 			while(i < queenPosPerRow.Length && j > -1)
 			{
@@ -69,6 +71,7 @@ namespace org.pv.AlgoPlayground.DynamicProgramming.NQueens
 				i++; j--;
 			}
 
+			//check diagonal up left
 			i = columnIndex-1; j = rowIndex-1;
 			while(i > -1 && j > -1)
 			{
