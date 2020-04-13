@@ -8,14 +8,12 @@ namespace org.pv.Common
 		private int _capacity;
 		private int _size; // independent of capacity, except size < _capacity
 		private const int DEFAULT_CAPACITY = 10;
-		private bool _isFixedSize;
 		private T[] _storage; //will use 
 
 		public MinHeap()
 		{
 			_capacity 		= DEFAULT_CAPACITY;
 			_storage		= new T[_capacity];
-			_isFixedSize 	= false;
 		}
 
 		// class' API - Add, Peek, Poll
