@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace org.pv.Common
+namespace org.pv.TreesAndGraphs.Common
 {
 	[Serializable]
 	internal class EmptyMinHeapException : Exception
