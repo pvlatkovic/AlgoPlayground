@@ -1,4 +1,5 @@
-using System;
+// CCI 4.2
+
 using org.pv.TreesAndGraphs.Common;
 
 namespace org.pv.AlgoPlayground.TreesAndGraphs.MinimalHeightTree
