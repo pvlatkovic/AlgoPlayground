@@ -33,7 +33,7 @@ namespace org.pv.Common
 		// only returns value of minimum element
 		public T Peek() 
 		{
-			if(_size == 0) throw new EmptyMinHeapException();
+			if(_size == 0) throw new EmptyHeapException();
 
 			return _storage[0];
 		}
@@ -41,7 +41,7 @@ namespace org.pv.Common
 		// Extract minimum element
 		public T Poll()
 		{
-			if(_size == 0) throw new EmptyMinHeapException();
+			if(_size == 0) throw new EmptyHeapException();
 
 			var ret = _storage[0];
 
