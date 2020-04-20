@@ -1,7 +1,7 @@
-using System;
+	using System;
 
-// data structure definition
-namespace org.pv.Common
+	// data structure definition
+	namespace org.pv.TreesAndGraphs.Common
 {
 	public class MinHeap<T> where T : IComparable<T>
 	{

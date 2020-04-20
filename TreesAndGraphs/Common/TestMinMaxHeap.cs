@@ -1,6 +1,7 @@
+using org.pv.TreesAndGraphs.Common;
 using Xunit;
 
-namespace org.pv.Common
+namespace org.pv.Common.TestTreesAndGraphs
 {
 	public class TestMinMaxHeap
 	{
