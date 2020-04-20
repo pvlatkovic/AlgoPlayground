@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 // data structure definition
@@ -15,6 +16,20 @@ public class Node<T>
 	{
 		Value = value;
 		Next = null;
+	}
+
+	public List<T> ToList()
+	{
+		var res = new List<T>();
+		
+		var next = this;
+		while(next != null)
+		{
+			res.Add(next.Value);
+			next = next.Next;
+		}
+
+		return res;
 	}
 
 	public static Node<T> CreateLinkedList(T[] input)
