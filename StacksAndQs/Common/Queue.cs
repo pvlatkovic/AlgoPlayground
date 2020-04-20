@@ -9,6 +9,8 @@ namespace org.pv.Common
 		private Node<T> top;
 		private Node<T> bottom;
 
+		private int count = 0;
+
 		public void Add(T item)
 		{
 			if(top == null)
@@ -21,6 +23,7 @@ namespace org.pv.Common
 				bottom.Next = new Node<T>(item);
 				bottom = bottom.Next;
 			}
+			count++;
 		}
 
 		public T Remove()
@@ -29,6 +32,8 @@ namespace org.pv.Common
 				throw new EmptyQueueException();
 			var ret = top.Value;
 			top = top.Next;
+
+			count--;
 
 			return ret;
 		}
@@ -58,6 +63,8 @@ namespace org.pv.Common
 
 			return ret;
 		}
+
+		public int Count { get { return count; } }
 	}
 
 	public class EmptyQueueException : Exception
