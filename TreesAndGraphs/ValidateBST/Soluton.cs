@@ -1,4 +1,4 @@
-// CCI 4.4
+// CCI 4.5
 
 using System;
 using org.pv.TreesAndGraphs.Common;
