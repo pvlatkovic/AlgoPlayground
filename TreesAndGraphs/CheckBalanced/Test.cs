@@ -4,7 +4,7 @@ using System;
 using org.pv.TreesAndGraphs.Common;
 using Xunit;
 
-namespace org.pv.CheckBalanced
+namespace org.pv.AlgoPlayground.TreesAndGraphs.CheckBalanced
 {
 	public class Test
 	{
