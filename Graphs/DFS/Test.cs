@@ -29,10 +29,10 @@ namespace org.pv.AlgoPlayground.Graphs.DFS
 
 
 			//WHEN
-			var result2 = Solution<int, int>.DFS(nodes, dependencies, 4);
+			var result2 = Solution<int, int>.DFS(nodes, dependencies, 0);
 
 			//THEN
-			Assert.Equal(1, result2);
+			Assert.Equal(4, result2);
 		}
 	}
 }
