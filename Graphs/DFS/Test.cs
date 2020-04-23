@@ -11,15 +11,38 @@ namespace org.pv.AlgoPlayground.Graphs.DFS
 		[Fact]
 		public void TestDFS()
 		{
-			//GIVEN
-			var nodes = new string[] { "a", "b", "c", "d", "e", "f" };
-			var dependencies = new string[,] { {"a", "d"}, {"f", "b"}, {"b", "d"}, {"f", "a"}, {"d", "c"}};
+			var nodes = new int[] { 0, 1, 2, 3, 4 };
+			var dependencies = new Edge<int, int>[] { 
+				new Edge<int, int>(0, 1, 0), 
+				new Edge<int, int>(0, 2, 0), 
+				new Edge<int, int>(1, 2, 0),
+				new Edge<int, int>(1, 3, 0),
+				new Edge<int, int>(2, 3, 0), 
+				new Edge<int, int>(2, 2, 0) // 2, 2 is self loop
+			}; 
 
 			//WHEN
-			var result = Solution<string, int>.DFS(nodes, dependencies, "a");
+			var result = Solution<int, int>.DFS(nodes, dependencies, 0);
 
 			//THEN
 			Assert.Equal(4, result);
+
+
+			//WHEN
+			var result2 = Solution<int, int>.DFS(nodes, dependencies, 4);
+
+			//THEN
+			Assert.Equal(1, result2);
 		}
 	}
 }
+
+
+			/*
+			//GIVEN
+			// var nodes = new string[] { "a", "b", "c", "d", "e", "f" };
+			// var dependencies = new string[,] { {"a", "d"}, {"f", "b"}, {"b", "d"}, {"f", "a"}, {"d", "c"}};
+
+			//WHEN
+			var result = Solution<string, int>.DFS(nodes, dependencies, "a");
+			*/

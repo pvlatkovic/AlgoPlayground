@@ -10,12 +10,12 @@ namespace org.pv.AlgoPlayground.Graphs.Common
 		{
 			
 		}
-		public void AddDirectedEdge(T from, T to, W cost)
+		public void AddDirectedEdge(Edge<T, W> edge)
 		{
-			if(!this.ContainsKey(from))
-				this[from] = new List<Edge<T, W>>();
+			if(!this.ContainsKey(edge.From))
+				this[edge.From] = new List<Edge<T, W>>();
 
-			this[from].Add(new Edge<T, W>(from, to, cost));
+			this[edge.From].Add(new Edge<T, W>(edge.From, edge.To, edge.Cost));
 		}
 	}
 }

@@ -5,11 +5,11 @@ using org.pv.Common;
 namespace org.pv.AlgoPlayground.Graphs.DFS  
 {
 	//Demo of Depth First Search
-	public class Solution<T, W>
+	public class Solution<T, W> // W is not good to have, cost/weight can be arbitary
 	{
 		// Perform a depth first search on a graph with n nodes.
 		// This impl returns number of connected nodes starting from firstNode
-		public static int DFS(T[] nodes, T[,] dependencies, T firstNode)
+		public static int DFS(T[] nodes, Edge<T, W>[] dependencies, T firstNode)
 		{
 			// Example
 			// nodes = { a, b, c, d, e, f }
@@ -19,8 +19,8 @@ namespace org.pv.AlgoPlayground.Graphs.DFS
 			// DFS(params, e).Count == 1 // not connected to any other nodes
 
 			var graph = new Common.Graph<T, W>();
-			for(int i = 0; i < dependencies.GetUpperBound(0)+1; i++)
-				graph.AddDirectedEdge(dependencies[i, 0], dependencies[i, 1], default(W));
+			for(int i = 0; i < dependencies.Length; i++)
+				graph.AddDirectedEdge(dependencies[i]);
 
 			var numberOfNodes = nodes.Length;
 

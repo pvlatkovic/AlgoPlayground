@@ -15,11 +15,11 @@ namespace org.pv.AlgoPlayground.Graphs.BuildOrder
 	{
 		public static List<string> GetBuildOrder(string[] projects, string[,] dependencies)
 		{
-			var graph = new Common.Graph<string, int>();
-			for(int i = 0; i < dependencies.Length; i++)
-				graph.AddDirectedEdge(dependencies[i, 0], dependencies[i, 1], 0);
+			// var graph = new Common.Graph<string, int>();
+			// for(int i = 0; i < dependencies.Length; i++)
+			// 	graph.AddDirectedEdge(dependencies[i], 0);
 
-			var numberOfNodes = projects.Length;
+			// var numberOfNodes = projects.Length;
 
 			
 
