@@ -1,4 +1,5 @@
-// CCI 4.7
+// CCI 4.7 Given a list of packages that need to be built and the dependencies 
+// for each package, determine a valid order in which to build the packages
 
 // Example
 // projects = { a, b, c, d, e, f }
@@ -15,11 +16,12 @@ namespace org.pv.AlgoPlayground.Graphs.BuildOrder
 	{
 		public static List<string> GetBuildOrder(string[] projects, string[,] dependencies)
 		{
-			// var graph = new Common.Graph<string, int>();
-			// for(int i = 0; i < dependencies.Length; i++)
-			// 	graph.AddDirectedEdge(dependencies[i], 0);
+			var graph = new Common.Graph<string, int>();
+			 for(int i = 0; i < dependencies.Length; i++)
+			 	graph.AddDirectedEdge(new Common.Edge<string, int>(dependencies[i, 0], dependencies[i, 1], 0));
 
-			// var numberOfNodes = projects.Length;
+			// find all non visited nodes with no connections to them 
+			// and set them to return List, then mark them as visited
 
 			
 
