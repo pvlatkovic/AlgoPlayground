@@ -9,7 +9,7 @@ namespace org.pv.AlgoPlayground.Graphs.DFS
 	{
 		// Perform a depth first search on a graph with n nodes.
 		// This impl returns number of connected nodes starting from firstNode
-		public static int DFS(T[] nodes, Edge<T, W>[] dependencies, T firstNode)
+		public static int DFS(T[] nodes, Common.Edge<T, W>[] dependencies, T firstNode)
 		{
 			// Example
 			// nodes = { a, b, c, d, e, f }

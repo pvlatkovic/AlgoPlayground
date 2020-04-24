@@ -12,13 +12,13 @@ namespace org.pv.AlgoPlayground.Graphs.DFS
 		public void TestDFS()
 		{
 			var nodes = new int[] { 0, 1, 2, 3, 4 };
-			var dependencies = new Edge<int, int>[] { 
-				new Edge<int, int>(0, 1, 0), 
-				new Edge<int, int>(0, 2, 0), 
-				new Edge<int, int>(1, 2, 0),
-				new Edge<int, int>(1, 3, 0),
-				new Edge<int, int>(2, 3, 0), 
-				new Edge<int, int>(2, 2, 0) // 2, 2 is self loop
+			var dependencies = new Common.Edge<int, int>[] { 
+				new Common.Edge<int, int>(0, 1, 0), 
+				new Common.Edge<int, int>(0, 2, 0), 
+				new Common.Edge<int, int>(1, 2, 0),
+				new Common.Edge<int, int>(1, 3, 0),
+				new Common.Edge<int, int>(2, 3, 0), 
+				new Common.Edge<int, int>(2, 2, 0) // 2, 2 is self loop
 			}; 
 
 			//WHEN

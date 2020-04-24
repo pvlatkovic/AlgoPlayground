@@ -1,4 +1,4 @@
-namespace org.pv.AlgoPlayground.Graphs
+namespace org.pv.AlgoPlayground.Graphs.Common
 {
 	public class Edge<T,W>
 	{
