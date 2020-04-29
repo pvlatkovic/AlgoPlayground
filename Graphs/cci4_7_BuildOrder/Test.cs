@@ -17,7 +17,7 @@ namespace org.pv.AlgoPlayground.Graphs.BuildOrder
 	public class Test
 	{
 		[Fact]
-		public void TestBuildOrder()
+		public void TestBuildOrder() // generic based solution
 		{
 			//GIVEN
 			var projects = new string[] { "a", "b", "c", "d", "e", "f" };
@@ -32,19 +32,33 @@ namespace org.pv.AlgoPlayground.Graphs.BuildOrder
 		}
 
 		[Fact]
-		public void TestBuildOrder2()
+		public void TestIntBuildOrder() // integer based solution
 		{
 			//GIVEN
-			var projects = new int[] { 1, 2, 3, 4, 5, 6 };
-			//						   a  b  c  d  e  f
-			var dependencies = new int[,] { { 1, 4 }, { 6, 2 }, { 2, 4 }, { 6, 1 }, { 4, 3 } };
-			var resultExpected = new int[] { 6, 5, 2, 1, 4, 3 };
+			var projects = new int[] { 0, 1, 2, 3, 4, 5 };
+			var dependencies = new int[,] { { 0, 3 }, { 5, 1 }, { 1, 3 }, { 5, 0 }, { 3, 2 } }; // indexes of projects
+			var resultExpected = new int[] { 5, 4, 1, 0, 3, 2 };
 
 			//WHEN
-			//var result = Solution2.GetBuildOrder(projects, dependencies);
+			var result = SolutionInt.GetBuildOrder(projects, dependencies);
 
 			//THEN
-			//Assert.True(result.SequenceEqual(resultExpected));
+			Assert.True(result.SequenceEqual(resultExpected));
+		}
+
+		[Fact]
+		public void TestStackBuildOrder() // integer based solution
+		{
+			//GIVEN
+			var projects = new int[] { 0, 1, 2, 3, 4, 5 };
+			var dependencies = new int[,] { { 0, 3 }, { 5, 1 }, { 1, 3 }, { 5, 0 }, { 3, 2 } }; // indexes of projects
+			var resultExpected = new int[] { 5, 4, 1, 0, 3, 2 };
+
+			//WHEN
+			var result = SolutionStack.GetBuildOrder(projects, dependencies);
+
+			//THEN
+			Assert.True(result.SequenceEqual(resultExpected));
 		}
 	}
 }

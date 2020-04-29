@@ -1,47 +1,81 @@
+// CCI 4.7 Given a list of packages that need to be built and the dependencies 
+// for each package, determine a valid order in which to build the packages
+
+// Example
+// projects = { a, b, c, d, e, f }
+// dependencies = { {a, d}, {f, b}, {b, d}, {f, a}, {d, c}}
+// output = { f, e, a, b, d, c}
+
 using System;
 using System.Collections.Generic;
 
+
 namespace org.pv.AlgoPlayground.Graphs.BuildOrder
 {
+	// simpler structure, not using Edge class in solution
 	public class SolutionInt
 	{
-		public static List<int> GetBuildOrder(int[,] dependencies, int[] projects)
+		/*
+					var projects = new int[] { 1, 2, 3, 4, 5, 6 };
+					//						   a  b  c  d  e  f
+					var dependencies = new int[,] { { 1, 4 }, { 6, 2 }, { 2, 4 }, { 6, 1 }, { 4, 3 } };
+					var resultExpected = new int[] { 6, 5, 2, 1, 4, 3 };
+
+		*/
+		
+		public static int[] GetBuildOrder(int[] projects, int[,] dependencies)
 		{
+			var visited = new bool[projects.Length];
 			var graph = new Dictionary<int, List<int>>();
-			var numberOfPairs = dependencies.GetUpperBound(0) + 1; 
-			for(int i = 0; i < numberOfPairs; i++)
+			var ordering = new int[projects.Length];
+			var indexOrdering = projects.Length - 1;
+
+			// build dependencies
+			for(int i = 0; i < dependencies.GetUpperBound(0)+1; i++)
 			{
-				if(!graph.ContainsKey(dependencies[i,0]))
-				{
+				if(!graph.ContainsKey(dependencies[i, 0]))
 					graph[dependencies[i, 0]] = new List<int>();
-				}
+
 				graph[dependencies[i, 0]].Add(dependencies[i, 1]);
 			}
-			
-			// lets try with DFS
-			
-			// we need list of visited nodes 
-			var visited = new bool[projects.Length]; // by default all are false
-			var stack = new Stack<int>();
 
-			// start from node 0, try to find nodes which are not dependent on any other nodes
-			for(int at=0; at < projects.Length; at++)
+			for	(int i=0; i < projects.Length; i++)
 			{
-				stack.Push(at); // push index of a project to stack
-				visited[at] = true;
-
-				// then traverse to its connections and mark visited
-				if(graph.ContainsKey(projects[at]))
+				var project = projects[i];
+				if(!visited[i])
 				{
-					for(int j=0; j < graph[projects[at]].Count; j++)
+					var visitedNodes = new List<int>();
+					dfs(i, graph, visited, visitedNodes, projects);
+					foreach(var vn in visitedNodes)
 					{
-						
+						ordering[indexOrdering] = vn;
+						indexOrdering--;
 					}
 				}
 			}
 
+			return ordering;
+		}
 
-			throw new NotImplementedException();
+		private static void dfs(int nodeIndex, Dictionary<int, List<int>> graph, bool[] visited, List<int> visitedNodes, int[] projects)
+		{
+			visited[nodeIndex] = true;
+			
+			if(graph.ContainsKey(projects[nodeIndex]))
+			{
+				var edges = graph[projects[nodeIndex]];
+
+				foreach(var edge in edges)
+				{
+					if(!visited[edge])
+					{
+						dfs(edge, graph, visited, visitedNodes, projects);
+					}
+				}
+			}
+
+			visitedNodes.Add(projects[nodeIndex]);
 		}
 	}
 }
+ 
