@@ -3,12 +3,12 @@
 	// data structure definition
 	namespace org.pv.TreesAndGraphs.Common
 {
-	public class MinHeap<T> where T : IComparable<T>
+	public class MinHeap<T> where T : IComparable
 	{
 		private int _capacity;
 		private int _size; // independent of capacity, except size < _capacity
 		private const int DEFAULT_CAPACITY = 10;
-		private T[] _storage; //will use 
+		private T[] _storage; 
 
 		public MinHeap()
 		{
@@ -85,7 +85,7 @@
 			}
 		}
 
-		private void HeapifyDown()
+		private void HeapifyDown() // executed after an element is polled from the MinHeap
 		{
 			var currentIndex = 0;
 			var leftChildIndex = GetLeftChildIndex(0);
@@ -109,7 +109,7 @@
 			}
 		}
 
-		private void HeapifyUp()
+		private void HeapifyUp()  // executed after an element is inserted into MinHeap (at the end of the storage array)
 		{
 			var currentIndex = _size - 1;
 
@@ -121,6 +121,7 @@
 				{
 					Swap(currentIndex, parentIndex);
 					currentIndex = parentIndex;
+					parentIndex = GetParentIndex(currentIndex);
 				}
 				else
 					break;

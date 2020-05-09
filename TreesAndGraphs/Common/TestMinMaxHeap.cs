@@ -9,7 +9,7 @@ namespace org.pv.Common.TestTreesAndGraphs
 		public void TestMinHeap()
 		{
 			//Given
-			var testData = new int[] {4, 5, 1, 3, 2, 5, 10, 11};
+			var testData = new int[] {4, 5, 3, 2, 5, 10, 11, 1};
 
 			//When we construct and fill the MinHeap
 			var testMinHeap = new MinHeap<int>();
