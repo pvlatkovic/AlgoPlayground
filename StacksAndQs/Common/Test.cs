@@ -31,15 +31,7 @@ namespace org.pv.Common
 				Assert.True(queue.Remove() == queueValues[index++]);
 			}
 
-			try
-			{
-				queue.Remove();
-				Assert.True(false);
-			}
-			catch (EmptyQueueException eqex)
-			{
-				Assert.True(true);
-			}
+			Assert.Throws<EmptyQueueException>(() => queue.Remove());
 		}
 
 		[Fact]
@@ -67,15 +59,7 @@ namespace org.pv.Common
 				Assert.True(stack.Pop() == stackValues[index--]);
 			}
 
-			try
-			{
-				stack.Pop();
-				Assert.True(false);
-			}
-			catch (EmptyStackException eqex)
-			{
-				Assert.True(true);
-			}
+			Assert.Throws<EmptyStackException>(() => stack.Pop());
 		}
 	}
 }
