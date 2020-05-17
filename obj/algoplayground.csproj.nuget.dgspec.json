@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {}
+    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj": {
+    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
+        "projectUniqueName": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
         "projectName": "algoplayground",
-        "projectPath": "c:\\Projects\\edu\\AlgoPlayground\\algoplayground.csproj",
-        "packagesPath": "C:\\Users\\peca\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\edu\\AlgoPlayground\\obj\\",
+        "projectPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
+        "packagesPath": "C:\\Users\\prvl1605\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\peca\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\prvl1605\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -75,7 +77,7 @@
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[3.0.2, 3.0.2]"
+              "version": "[3.0.3, 3.0.3]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
@@ -91,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

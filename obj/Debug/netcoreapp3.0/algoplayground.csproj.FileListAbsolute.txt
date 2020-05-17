@@ -188,3 +188,5 @@ C:\Projects\Me\repos\AlgoPlayground\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.Vi
 C:\Projects\Me\repos\AlgoPlayground\obj\Debug\netcoreapp3.0\algoplayground.csproj.CopyComplete
 C:\Projects\Me\repos\AlgoPlayground\obj\Debug\netcoreapp3.0\algoplayground.dll
 C:\Projects\Me\repos\AlgoPlayground\obj\Debug\netcoreapp3.0\algoplayground.pdb
+c:\Projects\Me\repos\AlgoPlayground\obj\Debug\netcoreapp3.0\algoplayground.csproj.CoreCompileInputs.cache
+c:\Projects\Me\repos\AlgoPlayground\obj\Debug\netcoreapp3.0\algoplayground.genruntimeconfig.cache
