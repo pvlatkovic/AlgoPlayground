@@ -16,7 +16,7 @@ namespace org.pv.AlgoPlayground.AP.MultiplyGigantic
 			var resultExpected = "58239‬";
 
 			//then
-			Assert.True(result == resultExpected);
+			Assert.True(resultExpected.CompareTo(result) == 0);
 		}
 	}
 }
