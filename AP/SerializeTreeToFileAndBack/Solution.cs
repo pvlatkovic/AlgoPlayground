@@ -9,7 +9,7 @@ namespace org.pv.AlgoPlayground.AP.SerializeTreeToFileAndBack
 	{
 		// string will be returned as a representation of a file
 
-		// ------------- NON RECURSIVE solution -----------------------
+		// ------------- NON RECURSIVE solution, just for fun :) -----------------------
 		public static string SerializeBinaryTreeToFileNoRecursion(NodeBinTree<int> tree)  
 		{
 			// travers with BFS and create an array as a storage (similar to min/max heap)
