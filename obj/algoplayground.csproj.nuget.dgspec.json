@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {}
+    "c:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {
+    "c:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
+        "projectUniqueName": "c:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
         "projectName": "algoplayground",
-        "projectPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
+        "projectPath": "c:\\Projects\\Me\\repos\\AlgoPlayground\\algoplayground.csproj",
         "packagesPath": "C:\\Users\\prvl1605\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Me\\repos\\AlgoPlayground\\obj\\",
+        "outputPath": "c:\\Projects\\Me\\repos\\AlgoPlayground\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
