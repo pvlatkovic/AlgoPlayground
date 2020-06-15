@@ -350,3 +350,12 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+bin/Debug/netcoreapp3.0/algoplayground.deps.json
+bin/Debug/netcoreapp3.0/algoplayground.runtimeconfig.dev.json
+obj/algoplayground.csproj.nuget.dgspec.json
+obj/algoplayground.csproj.nuget.g.props
+obj/project.assets.json
+obj/algoplayground.csproj.nuget.dgspec.json
+obj/algoplayground.csproj.nuget.g.props
+obj/project.assets.json
+bin/Debug/netcoreapp3.0/algoplayground.deps.json
