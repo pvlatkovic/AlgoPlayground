@@ -33,10 +33,12 @@ namespace org.pv.AlgoPlayground.AP.SerializeTreeToFileAndBack
 				{
 					result[index] = node.Value.ToString();
 
+					// basically, here we flatten tree to an array, if node is placed in i-th place 
+					// it's left and right node should be placed in i*2 + 1 and i*2 + 2 respectively
 					if(node.Left != null || node.Right != null)
 					{
-						stackOfNodes.Push(node.Right); stackOfNodes.Push(node.Left);
-						stackOfIndexes.Push(index * 2 + 2); stackOfIndexes.Push(index * 2 +1); 
+						stackOfNodes.Push(node.Right); stackOfNodes.Push(node.Left); 
+						stackOfIndexes.Push(index * 2 + 2); stackOfIndexes.Push(index * 2 +1);  // similarity with minheap implementation
 					}
 				}
 				else
