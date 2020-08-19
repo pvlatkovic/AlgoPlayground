@@ -31,25 +31,28 @@ namespace org.pv.AlgoPlayground.MSP.BinaryTreeToLinkedList
 	public class Solution
 	{
 		public static Node<int> Execute(NodeBinTree<int> tree)
-		{	
+		{
 			var start = new Node<int>() { Value = tree.Value };
 			Flatten(tree, start);
 
 			return start;
 		}
 
-		private static void Flatten(NodeBinTree<int> node, Node<int> parentNode)
+		private static Node<int> Flatten(NodeBinTree<int> node, Node<int> parentNode)
 		{
-			if(node.Left != null)
+			var lastNode = parentNode;
+			if (node.Left != null)
 			{
-				parentNode.Next = new Node<int>() { Value = node.Left.Value};
-				Flatten(node.Left, parentNode.Next);
+				parentNode.Next = new Node<int>() { Value = node.Left.Value };
+				lastNode = Flatten(node.Left, parentNode.Next);
 			}
-			if(node.Right != null)
+			if (node.Right != null)
 			{
-				parentNode.Next = new Node<int>() { Value = node.Right.Value};
-				Flatten(node.Right, parentNode.Next);
+				lastNode.Next = new Node<int>() { Value = node.Right.Value };
+				lastNode = Flatten(node.Right, lastNode.Next);
 			}
+
+			return lastNode;
 		}
 	}
 }
