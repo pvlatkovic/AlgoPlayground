@@ -1,6 +1,12 @@
 	using System;
 
 	// data structure definition
+	// Delete-min: O(log n)
+	// Insert: O(1)
+	// Find-min: O(1)
+	// Search: O(n)
+	// Space: O(n)
+
 	namespace org.pv.TreesAndGraphs.Common
 {
 	public class MinHeap<T> where T : IComparable
@@ -53,6 +59,11 @@
 			HeapifyDown();
 
 			return ret;
+		}
+
+		public bool IsEmpty()
+		{
+			return _size == 0;
 		}
 
 		// initial set of utility methods
