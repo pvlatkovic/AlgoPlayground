@@ -60,7 +60,6 @@ namespace org.pv.AlgoPlayground.TreesAndGraphs.FindHeightBinaryTree
 
 			//THEN
 			var resultExpected = 5;
-			Debug.WriteLine($"result {resultExpected}");
 			Assert.Equal(resultExpected, result);
 		}
 	}
