@@ -29,21 +29,21 @@ using System.Diagnostics;
 
 namespace org.pv.AlgoPlayground.MSP.CounterClockwiseBinTree
 {
-	public class Solution 
+	public class Solution
 	{
-		public static List<int> Execute (NodeBinTree<int> binTree)
+		public static List<int> Execute(NodeBinTree<int> binTree)
 		{
-			if(binTree == null)
+			if (binTree == null)
 				throw new ArgumentException();
 
 			var ret = new List<int>();
 			var h = GetHeight(binTree);
 
-			var a = 0; var b = h-1;
-			while(a <= b)
+			var a = 0; var b = h - 1;
+			while (a <= b)
 			{
 				AddLevel(binTree, a, true, ret);
-				if(a != b)
+				if (a != b)
 					AddLevel(binTree, b, false, ret);
 				a++; b--;
 			}
@@ -53,53 +53,52 @@ namespace org.pv.AlgoPlayground.MSP.CounterClockwiseBinTree
 
 		private static void AddLevel(NodeBinTree<int> root, int level, bool isRevert, List<int> ret)
 		{
-			if(root == null)
+			if (root == null)
 				return;
-			if(level == 0)
+			if (level == 0)
 				ret.Add(root.Value);
-			if(level > 0)
+			if (level > 0)
 			{
-				if(isRevert)
+				if (isRevert)
 				{
-					AddLevel(root.Right, level-1, isRevert, ret);
-					AddLevel(root.Left, level-1, isRevert, ret);
+					AddLevel(root.Right, level - 1, isRevert, ret);
+					AddLevel(root.Left, level - 1, isRevert, ret);
 				}
 				else
 				{
-					AddLevel(root.Left, level-1, isRevert, ret);			
-					AddLevel(root.Right, level-1, isRevert, ret);
-					
+					AddLevel(root.Left, level - 1, isRevert, ret);
+					AddLevel(root.Right, level - 1, isRevert, ret);
 				}
 			}
 		}
 
 		private static int GetHeight(NodeBinTree<int> root)
 		{
-			if(root != null)
+			if (root != null)
 			{
 				return 1 + Math.Max(GetHeight(root.Left), GetHeight(root.Right));
 			}
-				return 0;
+			return 0;
 		}
 	}
 }
 
 
-			/*		
-			// read each raw for the start
-			var ret = new List<int>();
+/*		
+// read each raw for the start
+var ret = new List<int>();
 
-			var q = new Queue<NodeBinTree<int>>();
-			q.Enqueue(binTree);
+var q = new Queue<NodeBinTree<int>>();
+q.Enqueue(binTree);
 
-			while(q.Count > 0)
-			{
-				var node = q.Dequeue();
-				ret.Add(node.Value);
+while(q.Count > 0)
+{
+	var node = q.Dequeue();
+	ret.Add(node.Value);
 
-				if(node.Left != null)
-					q.Enqueue(node.Left);
-				if(node.Right != null)
-					q.Enqueue(node.Right);
-			}
-			*/
+	if(node.Left != null)
+		q.Enqueue(node.Left);
+	if(node.Right != null)
+		q.Enqueue(node.Right);
+}
+*/
